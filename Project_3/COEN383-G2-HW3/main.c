@@ -5,25 +5,18 @@
 #include "simulation_utils.c"
 #include "seller.h"
 
-/*
-Todo list in general:
-- int assignSeat(char sellerType, int *seatRow, int *seatCol)
-- void printSeatingChart()
-- void printEvent(int time, char *message)
-- void calculateStatistics()
-- void *sell(void *s_t)
-- void wakeup_all_seller_threads()
-- main() function steps
+// Main Idea: 10 ticket sellers to 100 seats concert during one hour. Each ticket seller has their own queue for buyers.
 
-*/
-
-/*
-10 ticket sellers to 100 seats concert during one hour. Each ticket
-seller has their own queue for buyers.
-*/
-
+// Global variables
+#define NUM_SELLERS 10
+int queueSizes[NUM_SELLERS];   // # of customers each seller has
+int nextCustomer[NUM_SELLERS]; // index of next customer to be served per seller
+int currentTime = 0;
+int seatChart[10][10] = {0}; // 0 = available, 1 = taken
+int avalailableSeats = 100;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 // A thread can find its own-id: thread-id = pthread_self();
 // How a thread can find out about its own customers’ queue?
 // option-1: thread can find out its own thread-id and check the tid[] array to find the index
@@ -47,11 +40,9 @@ int assignSeat(char sellerType, int *seatRow, int *seatCol)
     // Return success/failure
 }
 
-void printSeatingChart()
-{
-}
+// void printSeatingChart(){}
 
-void printEvent(int time, char *message) {}
+// void printEvent(int time, char *message) {}
 
 void calculateStatistics()
 {
@@ -63,9 +54,11 @@ void calculateStatistics()
     // - Average throughput per seller type
 }
 
+// NOT COMPLETE
+// currently just prints out it started, waits once, prints its exiting but doesn't process any customers
 void *sell(void *s_t)
 {
-    // while (have more work to do)___________
+    // while (have more work to do){___________
     Seller *info = (Seller *)s_t; //  char *sellerType = (char *)s_t; // get seller type
     int myID = info->sellerID;
     char myType = info->sellerType;
@@ -107,15 +100,9 @@ int main(int argc, char *argv[])
 
     int i;              // for loop index
     pthread_t tids[10]; // thread ids for 10 seller threads
-    int NUM_SELLERS = 10;
 
     // Create necessary data structures for the simulator.
     Customer queues[NUM_SELLERS][N];
-    int queueSizes[NUM_SELLERS]; // how many customers each has
-    int nextCustomer[NUM_SELLERS];
-    int currentTime = 0;
-    int avalailableSeats = 100;
-    int seatChart[10][10]; // 10 rows x 10 cols seating chart
 
     // Create buyers list for each seller ticket queue based on the
     // N value within an hour and have them in the seller queue.
@@ -171,6 +158,19 @@ int main(int argc, char *argv[])
     // wakeup all seller threads
     printf("Waking up all seller threads...\n");
     wakeup_all_seller_threads();
+
+    /* Implement the simulation logic here???
+        For each minute 0-60:
+            a. Check which customers have arrived
+            b. Sellers serve customers (assign seats)
+            c. Print events as they happen
+            d. Update customer records
+        All threads finish when:
+            - All customers served OR
+            - Hour is up OR
+            - Seats sold out
+        Calculate and print statistics
+    */
 
     // wait for all seller threads to exit
     printf("Waiting for all seller threads to exit...\n");
