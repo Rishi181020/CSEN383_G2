@@ -5,7 +5,9 @@ seller has their own queue for buyers.
 
 Todo list:
 o Calculate average RT, WT, and TT per customer for a given seller type.
-o Function to print out statistics for each seller type.
+o Function to print out statistics for each seller type: void calculateStatistics()
+o void *sell(void *s_t)
+o Flesh out main() 
 o Add event printing using printSeatingChart() on line 109 and printEvent() on line 148.
 X int assignSeat(char sellerType, int *seatRow, int *seatCol)
     - Assign seat based on seller type (H, M, L)

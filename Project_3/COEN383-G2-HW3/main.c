@@ -93,47 +93,18 @@ void calculateStatistics()
 }
 
 // NEED TO IMPLEMENT
-// currently just prints out it started, waits once, prints its exiting but doesn't process any customers
 void *sell(void *s_t)
 {
-    Seller *info = (Seller *)s_t;
-    int myID = info->sellerID;
+    while (1)
+    { // having more work todo
+        Seller *info = (Seller *)s_t;
+        int myID = info->sellerID;
 
-    // Wait for initial wakeup
-    pthread_mutex_lock(&mutex);
-    pthread_cond_wait(&cond, &mutex);
-    pthread_mutex_unlock(&mutex);
-
-    // Process all customers
-    while (nextCustomer[myID] < queueSizes[myID] && availableSeats > 0)
-    {
-        Customer *c = &queues[myID][nextCustomer[myID]];
-
-        // Wait until customer arrives
-        while (currentTime < c->arrivalTime)
-        {
-            pthread_mutex_lock(&mutex);
-            pthread_cond_wait(&cond, &mutex); // Sleep until time advances
-            pthread_mutex_unlock(&mutex);
-        }
-
-        // Customer has arrived, serve them
-        c->startTime = currentTime;
-
-        // Assign seat (critical section)
         pthread_mutex_lock(&mutex);
-        int row, col;
-        int success = assignSeat(info->sellerType, c->customerID, &row, &col);
-        if (success)
-        {
-            c->seatRow = row;
-            c->seatCol = col;
-            c->gotSeat = 1;
-            c->endTime = currentTime + c->serviceTime;
-        }
+        pthread_cond_wait(&cond, &mutex); // wait until next buyer comes for this seller
         pthread_mutex_unlock(&mutex);
-
-        nextCustomer[myID]++;
+        // Serve any buyer available in this seller queue that is ready
+        // now to buy ticket till done with all relevant buyers in their queue
     }
 
     return NULL; // Thread exits when done
@@ -185,6 +156,7 @@ void printSeatingChart()
     pthread_mutex_unlock(&mutex);
 }
 
+// Needs to be fleshed out
 int main(int argc, char *argv[])
 {
     // Get N from the user via command line
