@@ -8,6 +8,7 @@ Todo list in general:
 - void *sell(void *s_t)
 - void wakeup_all_seller_threads()
 - main() function steps
+- time simulation
 
 
 */
