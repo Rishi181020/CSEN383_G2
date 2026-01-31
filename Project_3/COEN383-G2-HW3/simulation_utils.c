@@ -57,3 +57,25 @@ void generateCustomers(Customer queue[], int N, char sellerType, int sellerNumbe
         }
     }
 }
+
+// For debugging — prints all customers for one seller
+void printQueue(Customer queue[], int N, char sellerType, int sellerNumber)
+{
+    printf("\n=== Seller %c%d Queue (N=%d) ===\n", sellerType, sellerNumber, N);
+    printf("%-8s | Arrival | Service | Start | End | Seat\n", "ID");
+    printf("---------|---------|---------|-------|-----|--------\n");
+
+    for (int i = 0; i < N; i++)
+    {
+        Customer *c = &queue[i];
+        printf("%-8s | %7d | %7d | %5d | %3d | (%d,%d)\n",
+               c->customerID,
+               c->arrivalTime,
+               c->serviceTime,
+               c->startTime,
+               c->endTime,
+               c->seatRow,
+               c->seatCol);
+    }
+    printf("\n");
+}

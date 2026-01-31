@@ -1,13 +1,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-/*
-Average response time per customer for a given seller type
-Average turn-around time per customer for a given seller type
-Average throughput per seller type
-*/
-
-#include <stdbool.h> // for bool type in C (not needed in C++)
+#include <stdbool.h>
 
 typedef struct
 {
