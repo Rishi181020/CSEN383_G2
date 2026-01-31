@@ -79,3 +79,11 @@ void printQueue(Customer queue[], int N, char sellerType, int sellerNumber)
     }
     printf("\n");
 }
+
+// Print events with timestamp
+void printEvent(int time, char *message)
+{
+    int hours = time / 60;
+    int minutes = time % 60;
+    printf("[Time %02d:%02d] %s\n", hours, minutes, message);
+}
