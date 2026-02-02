@@ -51,7 +51,8 @@ ________________________________________________________________________________
 How to run:
 
 First run this one to compile:
-gcc -Wall -Wextra -g -std=c99 -o ticketSimulation main.c -lm
+gcc -pthread main.c -o ticketSimulation
+
 
 Then this one for executable:
 ./ticketSimulation <insert number of customers per seller to simulate>
