@@ -17,15 +17,13 @@ int queueSizes[NUM_SELLERS];                 // # of customers each seller has
 int nextCustomer[NUM_SELLERS];               // index of next customer to be served per seller
 int currentTime = 0;                         // to simulate time from 0 to 59 minutes
 char seatChart[10][10][5];                   // 2D array to represent 100 seats, each can hold customerID or "----" (5 chars)
-int availableSeats = 100;
+int availableSeats = 100;                    // total available seats left
+
+// For synchronization
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
-// A thread can find its own-id: thread-id = pthread_self();
-// How a thread can find out about its own customers’ queue?
-// option-3: when creating the thread, pass a struct that includes the index “i” and seller_type
-// seller thread to serve one time slice (1 minute)
-
+// Function to assign seat based on seller type
 int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
 {
     if (availableSeats <= 0)
@@ -35,7 +33,7 @@ int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
 
     int searchOrder[10];
 
-    // Define row search order for convenience
+    // Define row search order for convenience based on seller type
     if (sellerType == 'H')
     {
         for (int i = 0; i < 10; i++)
@@ -57,13 +55,13 @@ int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
         return 0;
     }
 
-    // Search for empty seat with search order
+    // Search for empty seat based on search order
     for (int i = 0; i < 10; i++)
     {
         int row = searchOrder[i];
         for (int col = 0; col < 10; col++)
         {
-            if (strcmp(seatChart[row][col], "----") == 0)
+            if (strcmp(seatChart[row][col], "----") == 0) // Empty seat found
             {
                 strcpy(seatChart[row][col], customerID);
                 *seatRow = row;
@@ -79,13 +77,6 @@ int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
 
 void calculateStatistics()
 {
-    // Calculate and print statistics:
-    // - How many H/M/L customers got seats
-    // - How many were turned away
-    // - Average response time per customer for a given seller type
-    // - Average turnaround time per customer for a given seller type
-    // - Average throughput per seller type
-
     int H_turned = 0;
     int M_turned = 0;
     int L_turned = 0;
@@ -99,6 +90,7 @@ void calculateStatistics()
     double m_total_tt = 0;
     double l_total_tt = 0;
 
+    // Iterate through all sellers and their queues
     for (int seller = 0; seller < NUM_SELLERS; seller++)
     {
         char sellerType;
@@ -115,6 +107,7 @@ void calculateStatistics()
             sellerType = 'L';
         }
 
+        // Process each customer in the seller's queue
         for (int i = 0; i < queueSizes[seller]; i++)
         {
             Customer *c = &queues[seller][i];
@@ -199,8 +192,10 @@ void calculateStatistics()
     printf("==========================================\n\n");
 }
 
+// Seller thread function
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
+// Each seller serves their own queue
 void *sell(void *s_t)
 {
     Seller *info = (Seller *)s_t;
@@ -211,6 +206,7 @@ void *sell(void *s_t)
 
     int sellerFree = 0;
 
+    // Serve customers in the queue
     while (nextCustomer[myId] < queueSizes[myId])
     {
         pthread_mutex_lock(&mutex);
@@ -424,24 +420,8 @@ int main(int argc, char *argv[])
 
     usleep(100000);
 
-    // wakeup all seller threads
-    // printEvent(currentTime, "Waking up all seller threads...");
-    // wakeup_all_seller_threads();
-
     for (currentTime = 0; currentTime <= 60; currentTime++)
     {
-        /* Implement the simulation logic here???
-            For each minute 0-60:
-                a. Check which customers have arrived
-                b. Sellers serve customers (assign seats)
-                c. Print events as they happen
-                d. Update customer records
-            All threads finish when:
-                - All customers served OR
-                - Hour is up OR
-                - Seats sold out
-        */
-
         pthread_cond_broadcast(&cond);
 
         usleep(50000);
