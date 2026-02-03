@@ -23,10 +23,6 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 // A thread can find its own-id: thread-id = pthread_self();
 // How a thread can find out about its own customers’ queue?
-// option-1: thread can find out its own thread-id and check the tid[] array to find the index
-// in the workload array where each entry is the head of the customers linked list.
-// option-2: when creating the thread, pass the last argument as the head of that thread’s
-// customers linked list…
 // option-3: when creating the thread, pass a struct that includes the index “i” and seller_type
 // seller thread to serve one time slice (1 minute)
 
@@ -204,91 +200,6 @@ void calculateStatistics()
 }
 
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
-/*
-void *sell(void *s_t)
-{
-    Seller *info = (Seller *)s_t;
-    int myId = info->sellerID;
-    char sellerType = info->sellerType;
-    int myNumber = info->sellerNumber;
-    char msg[200];
-
-    // int sellerFree = 0;
-    int sellerFree = 0; // when the seller will be free next
-
-    while (nextCustomer[myId] < queueSizes[myId])
-    {
-        pthread_mutex_lock(&mutex);
-
-        if (currentTime > 60)
-        {
-            while (nextCustomer[myId] < queueSizes[myId])
-            {
-                Customer *c = &queues[myId][nextCustomer[myId]];
-                c->gotSeat = 0;
-                c->startTime = -1;
-                c->endTime = 60;
-                nextCustomer[myId]++;
-            }
-            pthread_mutex_unlock(&mutex);
-            break;
-        }
-
-        Customer *customer = &queues[myId][nextCustomer[myId]];
-
-        while (customer->arrivalTime > currentTime || currentTime < sellerFree)
-        {
-            pthread_cond_wait(&cond, &mutex);
-            // pthread_mutex_unlock(&mutex);
-            // continue;
-        }
-
-        // customer->startTime = currentTime;
-        customer->startTime = MAX(sellerFree, currentTime);
-
-        sprintf(msg, "Customer %s arrives at seller %c%d's queue",
-                customer->customerID, sellerType, myNumber);
-        printEvent(customer->arrivalTime, msg);
-
-        int seatRow, seatCol;
-        pthread_mutex_lock(&mutex);
-        if (availableSeats > 0 &&
-            assignSeat(sellerType, customer->customerID, &seatRow, &seatCol))
-        {
-            customer->seatRow = seatRow;
-            customer->seatCol = seatCol;
-            customer->gotSeat = 1;
-            customer->endTime = customer->startTime + customer->serviceTime;
-
-            sellerFree = customer->endTime;
-            sprintf(msg, "Seller %c%d assigns seat (%d,%d) to customer %s",
-                    sellerType, myNumber, seatRow, seatCol, customer->customerID);
-            printEvent(currentTime, msg);
-
-            sprintf(msg, "Customer %s completes purchase (service: %d min)",
-                    customer->customerID, customer->serviceTime);
-            printEvent(customer->endTime, msg);
-
-
-        }
-        else
-        {
-            // Sold out seat
-            customer->gotSeat = 0;
-            customer->endTime = currentTime;
-
-            sprintf(msg, "Customer %s turned away by %c%d - SOLD OUT",
-                    customer->customerID, sellerType, myNumber);
-            printEvent(currentTime, msg);
-        }
-
-        nextCustomer[myId]++;
-        pthread_mutex_unlock(&mutex);
-    }
-
-    return NULL;
-}
-*/
 
 void *sell(void *s_t)
 {
@@ -563,14 +474,6 @@ int main(int argc, char *argv[])
 
     printSeatingChart(); // print final seating chart
     calculateStatistics();
-    /*
-    Print final statistics:
-        - How many H/M/L customers got seats
-        - How many were turned away
-        - Average response time per seller type
-        - Average turnaround time per seller type
-        - Average throughput per seller type
-    */
 
     printf("Simulation complete.\n");
 
