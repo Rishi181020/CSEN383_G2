@@ -9,20 +9,6 @@
 
 // Main Idea: 10 ticket sellers to 100 seats concert during one hour. Each ticket seller has their own queue for buyers.
 
-// Global variables
-#define NUM_SELLERS 10
-#define MAX_CUSTOMERS 20
-Customer queues[NUM_SELLERS][MAX_CUSTOMERS]; // queues for each seller
-int queueSizes[NUM_SELLERS];                 // # of customers each seller has
-int nextCustomer[NUM_SELLERS];               // index of next customer to be served per seller
-int currentTime = 0;                         // to simulate time from 0 to 59 minutes
-char seatChart[10][10][5];                   // 2D array to represent 100 seats, each can hold customerID or "----" (5 chars)
-int availableSeats = 100;                    // total available seats left
-
-// For synchronization
-pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-
 // Function to assign seat based on seller type
 int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
 {
@@ -63,10 +49,10 @@ int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
         {
             if (strcmp(seatChart[row][col], "----") == 0) // Empty seat found
             {
-                strcpy(seatChart[row][col], customerID);
+                strcpy(seatChart[row][col], customerID); // Assign customerID to seat
                 *seatRow = row;
                 *seatCol = col;
-                availableSeats--;
+                availableSeats--; // Decrease available seats
                 return 1;
             }
         }
@@ -75,141 +61,25 @@ int assignSeat(char sellerType, char *customerID, int *seatRow, int *seatCol)
     return 0; // No seat found
 }
 
-void calculateStatistics()
-{
-    int H_turned = 0;
-    int M_turned = 0;
-    int L_turned = 0;
-    int H_served = 0;
-    int M_served = 0;
-    int L_served = 0;
-    double h_total_rt = 0;
-    double m_total_rt = 0;
-    double l_total_rt = 0;
-    double h_total_tt = 0;
-    double m_total_tt = 0;
-    double l_total_tt = 0;
-
-    // Iterate through all sellers and their queues
-    for (int seller = 0; seller < NUM_SELLERS; seller++)
-    {
-        char sellerType;
-        if (seller == 0)
-        {
-            sellerType = 'H';
-        }
-        else if (seller >= 1 && seller < 4)
-        {
-            sellerType = 'M';
-        }
-        else
-        {
-            sellerType = 'L';
-        }
-
-        // Process each customer in the seller's queue
-        for (int i = 0; i < queueSizes[seller]; i++)
-        {
-            Customer *c = &queues[seller][i];
-            if (c->gotSeat == 1)
-            {
-                int each_customer_rt = c->startTime - c->arrivalTime;
-                int each_customer_tt = c->endTime - c->arrivalTime;
-                if (sellerType == 'H')
-                {
-                    h_total_rt += each_customer_rt;
-                    h_total_tt += each_customer_tt;
-                    H_served++;
-                }
-                else if (sellerType == 'M')
-                {
-                    m_total_rt += each_customer_rt;
-                    m_total_tt += each_customer_tt;
-                    M_served++;
-                }
-                else
-                {
-                    l_total_rt += each_customer_rt;
-                    l_total_tt += each_customer_tt;
-                    L_served++;
-                }
-            }
-            else
-            {
-                if (sellerType == 'H')
-                {
-                    H_turned++;
-                }
-                else if (sellerType == 'M')
-                {
-                    M_turned++;
-                }
-                else
-                {
-                    L_turned++;
-                }
-            }
-        }
-    }
-    printf("High-Price Seller (H):\n");
-    printf("  Customers served: %d\n", H_served);
-    printf("  Customers turned away: %d\n", H_turned);
-    if (H_served > 0)
-    {
-        printf("  Average response time: %.2f minutes\n", h_total_rt / H_served);
-        printf("  Average turnaround time: %.2f minutes\n", h_total_tt / H_served);
-        printf("  Throughput: %.2f customers/hour\n", (double)H_served); /// 60.0
-    }
-    printf("\n");
-
-    // Medium-price sellers
-    printf("Medium-Price Sellers (M1, M2, M3):\n");
-    printf("  Customers served: %d\n", M_served);
-    printf("  Customers turned away: %d\n", M_turned);
-    if (M_served > 0)
-    {
-        printf("  Average response time: %.2f minutes\n", m_total_rt / M_served);
-        printf("  Average turnaround time: %.2f minutes\n", m_total_tt / M_served);
-        printf("  Throughput per seller: %.2f customers/hour\n", (double)M_served / 3.0); /// 60.0
-    }
-    printf("\n");
-
-    // Low-price sellers
-    printf("Low-Price Sellers (L1-L6):\n");
-    printf("  Customers served: %d\n", L_served);
-    printf("  Customers turned away: %d\n", L_turned);
-    if (L_served > 0)
-    {
-        printf("  Average response time: %.2f minutes\n", l_total_rt / L_served);
-        printf("  Average turnaround time: %.2f minutes\n", l_total_tt / L_served);
-        // per hour
-        printf("  Throughput per seller: %.2f customers/hour\n", (double)L_served / 6.0); /// 60.0
-    }
-    printf("\n");
-
-    printf("Total served: %d\n", H_served + M_served + L_served);
-    printf("Total turned away: %d\n", H_turned + M_turned + L_turned);
-    printf("==========================================\n\n");
-}
-
-// Seller thread function
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-
 // Each seller serves their own queue
 void *sell(void *s_t)
 {
+    // Extract seller info for convenience
     Seller *info = (Seller *)s_t;
     int myId = info->sellerID;
     char sellerType = info->sellerType;
     int myNumber = info->sellerNumber;
+
+    // Message buffer for printing
     char msg[200];
 
+    // Track when seller is free
     int sellerFree = 0;
 
     // Serve customers in the queue
     while (nextCustomer[myId] < queueSizes[myId])
     {
-        pthread_mutex_lock(&mutex);
+        pthread_mutex_lock(&mutex); // Lock for synchronization
 
         Customer *customer = &queues[myId][nextCustomer[myId]];
 
@@ -241,6 +111,7 @@ void *sell(void *s_t)
                 customer->customerID, sellerType, myNumber);
         printEvent(customer->arrivalTime, msg);
 
+        // Now serve the customer
         int seatRow = -1, seatCol = -1;
         int seatAssigned = 0;
 
@@ -252,6 +123,8 @@ void *sell(void *s_t)
 
         if (seatAssigned)
         {
+            // Seat assigned successfully
+
             customer->seatRow = seatRow;
             customer->seatCol = seatCol;
             customer->gotSeat = 1;
@@ -278,56 +151,18 @@ void *sell(void *s_t)
             printEvent(currentTime, msg);
         }
 
-        nextCustomer[myId]++;
+        nextCustomer[myId]++; // Move to next customer
         pthread_mutex_unlock(&mutex);
     }
 
     return NULL;
 }
 
+// Wake up all seller threads function provided in project description
 void wakeup_all_seller_threads()
 {
     pthread_mutex_lock(&mutex);
     pthread_cond_broadcast(&cond);
-    pthread_mutex_unlock(&mutex);
-}
-
-// Print the seating chart
-void printSeatingChart()
-{
-    pthread_mutex_lock(&mutex);
-    printf("\n========== SEATING CHART ==========\n");
-    printf("    ");
-
-    // Print column headers (0-9)
-    for (int col = 0; col < 10; col++)
-    {
-        printf("Col%d ", col);
-    }
-    printf("\n");
-
-    // Print separator line
-    printf("    ");
-    for (int col = 0; col < 10; col++)
-    {
-        printf("---- ");
-    }
-    printf("\n");
-
-    // Print each row
-    for (int row = 0; row < 10; row++)
-    {
-        printf("R%d: ", row); // Row label
-
-        for (int col = 0; col < 10; col++)
-        {
-            printf("%-4s ", seatChart[row][col]); // Print customer ID or "----"
-        }
-        printf("\n");
-    }
-
-    printf("===================================\n");
-    printf("Available seats: %d / 100\n\n", availableSeats);
     pthread_mutex_unlock(&mutex);
 }
 
@@ -347,13 +182,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Seed random number generator **
+    // Seed random number generator
     srand(time(NULL));
 
     pthread_t tids[10]; // thread ids for 10 seller threads
 
-    // Create buyers list for each seller ticket queue based on the
-    // N value within an hour and have them in the seller queue.
     // Generate customers for all sellers
     generateCustomers(queues[0], N, 'H', 1);
     generateCustomers(queues[1], N, 'M', 1);
@@ -380,11 +213,6 @@ int main(int argc, char *argv[])
             strcpy(seatChart[i][j], "----");
         }
     }
-
-    // Debugging
-    // printQueue(queues[0], N, 'H', 1); // H seller
-    // printQueue(queues[1], N, 'M', 1); // M1 seller
-    // printQueue(queues[4], N, 'L', 1); // L1 seller
 
     // Generate the sellers
     Seller sellers[10];
@@ -418,19 +246,20 @@ int main(int argc, char *argv[])
         pthread_create(&tids[i], NULL, sell, &sellers[i]);
     }
 
-    usleep(100000);
+    usleep(100000); // Allow threads to start
 
-    for (currentTime = 0; currentTime <= 60; currentTime++)
+    // Simulate time —  60 minutes
+    for (; currentTime <= 60; currentTime++)
     {
-        pthread_cond_broadcast(&cond);
+        pthread_cond_broadcast(&cond); // wake up all seller threads
 
-        usleep(50000);
+        usleep(50000); // Simulate 1 minute passing (50ms)
 
         pthread_mutex_lock(&mutex);
-        int seats = availableSeats;
+        int seats = availableSeats; // check available seats
         pthread_mutex_unlock(&mutex);
 
-        if (seats == 0)
+        if (seats == 0) // if sold out, end simulation early
         {
             char msg[100];
             sprintf(msg, "Concert SOLD OUT at minute %d!", currentTime);
@@ -439,8 +268,9 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Signal all threads that simulation has ended
     pthread_mutex_lock(&mutex);
-    currentTime = 61;
+    currentTime = 61; // Set time past 60 to trigger thread exit
     pthread_mutex_unlock(&mutex);
     pthread_cond_broadcast(&cond);
 
@@ -449,11 +279,11 @@ int main(int argc, char *argv[])
     printf("Waiting for all seller threads to exit...\n");
     for (int i = 0; i < 10; i++)
     {
-        pthread_join(tids[i], NULL);
+        pthread_join(tids[i], NULL); // wait for each seller thread to finish
     }
 
-    printSeatingChart(); // print final seating chart
-    calculateStatistics();
+    printSeatingChart();   // print final seating chart
+    calculateStatistics(); // print statistics
 
     printf("Simulation complete.\n");
 

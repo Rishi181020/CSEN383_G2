@@ -1,341 +1,341 @@
 [Time 00:00] Creating 10 threads representing the 10 sellers...
-[Time 00:00] Customer M305 arrives at seller M3's queue
-[Time 00:00] Seller M3 assigns seat (4,0) to customer M305
-[Time 00:02] Customer M305 completes purchase (service: 2 min)
-[Time 00:04] Customer M106 arrives at seller M1's queue
-[Time 00:04] Seller M1 assigns seat (4,1) to customer M106
-[Time 00:06] Customer M106 completes purchase (service: 2 min)
-[Time 00:04] Customer H107 arrives at seller H1's queue
-[Time 00:04] Seller H1 assigns seat (0,0) to customer H107
-[Time 00:05] Customer H107 completes purchase (service: 1 min)
-[Time 00:05] Customer L505 arrives at seller L5's queue
-[Time 00:05] Seller L5 assigns seat (9,0) to customer L505
-[Time 00:11] Customer L505 completes purchase (service: 6 min)
-[Time 00:06] Customer M203 arrives at seller M2's queue
-[Time 00:06] Seller M2 assigns seat (4,2) to customer M203
-[Time 00:08] Customer M203 completes purchase (service: 2 min)
-[Time 00:06] Customer H108 arrives at seller H1's queue
-[Time 00:06] Seller H1 assigns seat (0,1) to customer H108
-[Time 00:08] Customer H108 completes purchase (service: 2 min)
-[Time 00:05] Customer M102 arrives at seller M1's queue
-[Time 00:06] Seller M1 assigns seat (4,3) to customer M102
-[Time 00:08] Customer M102 completes purchase (service: 2 min)
-[Time 00:07] Customer M301 arrives at seller M3's queue
-[Time 00:07] Seller M3 assigns seat (4,4) to customer M301
-[Time 00:11] Customer M301 completes purchase (service: 4 min)
-[Time 00:06] Customer M108 arrives at seller M1's queue
-[Time 00:08] Seller M1 assigns seat (4,5) to customer M108
-[Time 00:12] Customer M108 completes purchase (service: 4 min)
-[Time 00:08] Customer L602 arrives at seller L6's queue
-[Time 00:08] Seller L6 assigns seat (9,1) to customer L602
-[Time 00:15] Customer L602 completes purchase (service: 7 min)
-[Time 00:09] Customer L207 arrives at seller L2's queue
-[Time 00:09] Seller L2 assigns seat (9,2) to customer L207
-[Time 00:13] Customer L207 completes purchase (service: 4 min)
-[Time 00:10] Customer L305 arrives at seller L3's queue
-[Time 00:10] Seller L3 assigns seat (9,3) to customer L305
-[Time 00:14] Customer L305 completes purchase (service: 4 min)
-[Time 00:11] Customer L109 arrives at seller L1's queue
-[Time 00:11] Seller L1 assigns seat (9,4) to customer L109
-[Time 00:18] Customer L109 completes purchase (service: 7 min)
-[Time 00:07] Customer M303 arrives at seller M3's queue
-[Time 00:11] Seller M3 assigns seat (4,6) to customer M303
-[Time 00:15] Customer M303 completes purchase (service: 4 min)
-[Time 00:11] Customer M202 arrives at seller M2's queue
-[Time 00:11] Seller M2 assigns seat (4,7) to customer M202
-[Time 00:14] Customer M202 completes purchase (service: 3 min)
-[Time 00:07] Customer L501 arrives at seller L5's queue
-[Time 00:11] Seller L5 assigns seat (9,5) to customer L501
-[Time 00:17] Customer L501 completes purchase (service: 6 min)
-[Time 00:09] Customer M109 arrives at seller M1's queue
-[Time 00:12] Seller M1 assigns seat (4,8) to customer M109
-[Time 00:16] Customer M109 completes purchase (service: 4 min)
-[Time 00:12] Customer H104 arrives at seller H1's queue
-[Time 00:12] Seller H1 assigns seat (0,2) to customer H104
-[Time 00:13] Customer H104 completes purchase (service: 1 min)
-[Time 00:13] Customer L406 arrives at seller L4's queue
-[Time 00:13] Seller L4 assigns seat (9,6) to customer L406
-[Time 00:18] Customer L406 completes purchase (service: 5 min)
-[Time 00:12] Customer H105 arrives at seller H1's queue
-[Time 00:13] Seller H1 assigns seat (0,3) to customer H105
-[Time 00:14] Customer H105 completes purchase (service: 1 min)
-[Time 00:10] Customer L310 arrives at seller L3's queue
-[Time 00:14] Seller L3 assigns seat (9,7) to customer L310
-[Time 00:20] Customer L310 completes purchase (service: 6 min)
-[Time 00:13] Customer H101 arrives at seller H1's queue
-[Time 00:14] Seller H1 assigns seat (0,4) to customer H101
-[Time 00:16] Customer H101 completes purchase (service: 2 min)
+[Time 00:00] Customer M102 arrives at seller M1's queue
+[Time 00:00] Seller M1 assigns seat (4,0) to customer M102
+[Time 00:02] Customer M102 completes purchase (service: 2 min)
+[Time 00:00] Customer M210 arrives at seller M2's queue
+[Time 00:00] Seller M2 assigns seat (4,1) to customer M210
+[Time 00:03] Customer M210 completes purchase (service: 3 min)
+[Time 00:00] Customer M309 arrives at seller M3's queue
+[Time 00:00] Seller M3 assigns seat (4,2) to customer M309
+[Time 00:02] Customer M309 completes purchase (service: 2 min)
+[Time 00:01] Customer L106 arrives at seller L1's queue
+[Time 00:01] Seller L1 assigns seat (9,0) to customer L106
+[Time 00:06] Customer L106 completes purchase (service: 5 min)
+[Time 00:01] Customer L510 arrives at seller L5's queue
+[Time 00:01] Seller L5 assigns seat (9,1) to customer L510
+[Time 00:07] Customer L510 completes purchase (service: 6 min)
+[Time 00:02] Customer L409 arrives at seller L4's queue
+[Time 00:02] Seller L4 assigns seat (9,2) to customer L409
+[Time 00:09] Customer L409 completes purchase (service: 7 min)
+[Time 00:02] Customer L604 arrives at seller L6's queue
+[Time 00:02] Seller L6 assigns seat (9,3) to customer L604
+[Time 00:09] Customer L604 completes purchase (service: 7 min)
+[Time 00:04] Customer L301 arrives at seller L3's queue
+[Time 00:04] Seller L3 assigns seat (9,4) to customer L301
+[Time 00:10] Customer L301 completes purchase (service: 6 min)
+[Time 00:05] Customer L202 arrives at seller L2's queue
+[Time 00:05] Seller L2 assigns seat (9,5) to customer L202
+[Time 00:09] Customer L202 completes purchase (service: 4 min)
+[Time 00:05] Customer M310 arrives at seller M3's queue
+[Time 00:05] Seller M3 assigns seat (4,3) to customer M310
+[Time 00:07] Customer M310 completes purchase (service: 2 min)
+[Time 00:07] Customer L509 arrives at seller L5's queue
+[Time 00:07] Seller L5 assigns seat (9,6) to customer L509
+[Time 00:14] Customer L509 completes purchase (service: 7 min)
+[Time 00:07] Customer H101 arrives at seller H1's queue
+[Time 00:07] Seller H1 assigns seat (0,0) to customer H101
+[Time 00:08] Customer H101 completes purchase (service: 1 min)
+[Time 00:03] Customer L605 arrives at seller L6's queue
+[Time 00:09] Seller L6 assigns seat (9,7) to customer L605
+[Time 00:14] Customer L605 completes purchase (service: 5 min)
+[Time 00:08] Customer L209 arrives at seller L2's queue
+[Time 00:09] Seller L2 assigns seat (9,8) to customer L209
+[Time 00:14] Customer L209 completes purchase (service: 5 min)
+[Time 00:10] Customer L109 arrives at seller L1's queue
+[Time 00:10] Seller L1 assigns seat (9,9) to customer L109
+[Time 00:14] Customer L109 completes purchase (service: 4 min)
 [Time 00:12] Customer M208 arrives at seller M2's queue
-[Time 00:14] Seller M2 assigns seat (4,9) to customer M208
-[Time 00:18] Customer M208 completes purchase (service: 4 min)
-[Time 00:13] Customer L610 arrives at seller L6's queue
-[Time 00:15] Seller L6 assigns seat (9,8) to customer L610
-[Time 00:22] Customer L610 completes purchase (service: 7 min)
-[Time 00:08] Customer M308 arrives at seller M3's queue
-[Time 00:15] Seller M3 assigns seat (5,0) to customer M308
-[Time 00:18] Customer M308 completes purchase (service: 3 min)
-[Time 00:13] Customer M103 arrives at seller M1's queue
-[Time 00:16] Seller M1 assigns seat (5,1) to customer M103
-[Time 00:19] Customer M103 completes purchase (service: 3 min)
-[Time 00:16] Customer H106 arrives at seller H1's queue
-[Time 00:16] Seller H1 assigns seat (0,5) to customer H106
-[Time 00:18] Customer H106 completes purchase (service: 2 min)
-[Time 00:07] Customer L508 arrives at seller L5's queue
-[Time 00:17] Seller L5 assigns seat (9,9) to customer L508
-[Time 00:23] Customer L508 completes purchase (service: 6 min)
-[Time 00:17] Customer L403 arrives at seller L4's queue
-[Time 00:18] Seller L4 assigns seat (8,0) to customer L403
-[Time 00:25] Customer L403 completes purchase (service: 7 min)
-[Time 00:18] Customer L208 arrives at seller L2's queue
-[Time 00:18] Seller L2 assigns seat (8,1) to customer L208
-[Time 00:25] Customer L208 completes purchase (service: 7 min)
-[Time 00:17] Customer H110 arrives at seller H1's queue
-[Time 00:18] Seller H1 assigns seat (0,6) to customer H110
-[Time 00:20] Customer H110 completes purchase (service: 2 min)
-[Time 00:13] Customer L108 arrives at seller L1's queue
-[Time 00:18] Seller L1 assigns seat (8,2) to customer L108
-[Time 00:23] Customer L108 completes purchase (service: 5 min)
-[Time 00:16] Customer M105 arrives at seller M1's queue
-[Time 00:19] Seller M1 assigns seat (5,2) to customer M105
-[Time 00:22] Customer M105 completes purchase (service: 3 min)
-[Time 00:18] Customer H109 arrives at seller H1's queue
-[Time 00:20] Seller H1 assigns seat (0,7) to customer H109
-[Time 00:21] Customer H109 completes purchase (service: 1 min)
-[Time 00:19] Customer H103 arrives at seller H1's queue
-[Time 00:21] Seller H1 assigns seat (0,8) to customer H103
-[Time 00:22] Customer H103 completes purchase (service: 1 min)
-[Time 00:20] Customer L609 arrives at seller L6's queue
-[Time 00:22] Seller L6 assigns seat (8,3) to customer L609
-[Time 00:26] Customer L609 completes purchase (service: 4 min)
-[Time 00:17] Customer M104 arrives at seller M1's queue
-[Time 00:22] Seller M1 assigns seat (5,3) to customer M104
-[Time 00:24] Customer M104 completes purchase (service: 2 min)
-[Time 00:09] Customer L502 arrives at seller L5's queue
-[Time 00:23] Seller L5 assigns seat (8,4) to customer L502
-[Time 00:27] Customer L502 completes purchase (service: 4 min)
-[Time 00:23] Customer L302 arrives at seller L3's queue
-[Time 00:23] Seller L3 assigns seat (8,5) to customer L302
-[Time 00:30] Customer L302 completes purchase (service: 7 min)
-[Time 00:15] Customer L110 arrives at seller L1's queue
-[Time 00:23] Seller L1 assigns seat (8,6) to customer L110
-[Time 00:27] Customer L110 completes purchase (service: 4 min)
-[Time 00:25] Customer M210 arrives at seller M2's queue
-[Time 00:25] Seller M2 assigns seat (5,4) to customer M210
-[Time 00:27] Customer M210 completes purchase (service: 2 min)
-[Time 00:20] Customer L408 arrives at seller L4's queue
-[Time 00:25] Seller L4 assigns seat (8,7) to customer L408
-[Time 00:31] Customer L408 completes purchase (service: 6 min)
-[Time 00:20] Customer L201 arrives at seller L2's queue
-[Time 00:25] Seller L2 assigns seat (8,8) to customer L201
-[Time 00:30] Customer L201 completes purchase (service: 5 min)
-[Time 00:22] Customer L608 arrives at seller L6's queue
-[Time 00:26] Seller L6 assigns seat (8,9) to customer L608
-[Time 00:33] Customer L608 completes purchase (service: 7 min)
-[Time 00:18] Customer L106 arrives at seller L1's queue
-[Time 00:27] Seller L1 assigns seat (7,0) to customer L106
-[Time 00:31] Customer L106 completes purchase (service: 4 min)
-[Time 00:27] Customer M309 arrives at seller M3's queue
-[Time 00:27] Seller M3 assigns seat (5,5) to customer M309
-[Time 00:29] Customer M309 completes purchase (service: 2 min)
-[Time 00:09] Customer L507 arrives at seller L5's queue
-[Time 00:27] Seller L5 assigns seat (7,1) to customer L507
-[Time 00:32] Customer L507 completes purchase (service: 5 min)
-[Time 00:27] Customer M310 arrives at seller M3's queue
-[Time 00:29] Seller M3 assigns seat (5,6) to customer M310
-[Time 00:31] Customer M310 completes purchase (service: 2 min)
-[Time 00:23] Customer L304 arrives at seller L3's queue
-[Time 00:30] Seller L3 assigns seat (7,2) to customer L304
-[Time 00:36] Customer L304 completes purchase (service: 6 min)
-[Time 00:20] Customer L204 arrives at seller L2's queue
-[Time 00:30] Seller L2 assigns seat (7,3) to customer L204
-[Time 00:35] Customer L204 completes purchase (service: 5 min)
-[Time 00:31] Customer M307 arrives at seller M3's queue
-[Time 00:31] Seller M3 assigns seat (5,7) to customer M307
-[Time 00:34] Customer M307 completes purchase (service: 3 min)
-[Time 00:29] Customer L107 arrives at seller L1's queue
-[Time 00:31] Seller L1 assigns seat (7,4) to customer L107
-[Time 00:38] Customer L107 completes purchase (service: 7 min)
-[Time 00:22] Customer L404 arrives at seller L4's queue
-[Time 00:31] Seller L4 assigns seat (7,5) to customer L404
-[Time 00:38] Customer L404 completes purchase (service: 7 min)
-[Time 00:12] Customer L506 arrives at seller L5's queue
-[Time 00:32] Seller L5 assigns seat (7,6) to customer L506
-[Time 00:37] Customer L506 completes purchase (service: 5 min)
-[Time 00:26] Customer L603 arrives at seller L6's queue
-[Time 00:33] Seller L6 assigns seat (7,7) to customer L603
-[Time 00:39] Customer L603 completes purchase (service: 6 min)
-[Time 00:34] Customer M110 arrives at seller M1's queue
-[Time 00:34] Seller M1 assigns seat (5,8) to customer M110
-[Time 00:36] Customer M110 completes purchase (service: 2 min)
-[Time 00:31] Customer L209 arrives at seller L2's queue
-[Time 00:35] Seller L2 assigns seat (7,8) to customer L209
-[Time 00:40] Customer L209 completes purchase (service: 5 min)
-[Time 00:27] Customer L306 arrives at seller L3's queue
-[Time 00:36] Seller L3 assigns seat (7,9) to customer L306
-[Time 00:42] Customer L306 completes purchase (service: 6 min)
-[Time 00:36] Customer M306 arrives at seller M3's queue
-[Time 00:36] Seller M3 assigns seat (5,9) to customer M306
-[Time 00:40] Customer M306 completes purchase (service: 4 min)
-[Time 00:22] Customer L504 arrives at seller L5's queue
-[Time 00:37] Seller L5 assigns seat (6,0) to customer L504
-[Time 00:41] Customer L504 completes purchase (service: 4 min)
-[Time 00:34] Customer L401 arrives at seller L4's queue
-[Time 00:38] Seller L4 assigns seat (6,1) to customer L401
-[Time 00:45] Customer L401 completes purchase (service: 7 min)
-[Time 00:30] Customer L104 arrives at seller L1's queue
-[Time 00:38] Seller L1 assigns seat (6,2) to customer L104
-[Time 00:44] Customer L104 completes purchase (service: 6 min)
-[Time 00:39] Customer M206 arrives at seller M2's queue
-[Time 00:39] Seller M2 assigns seat (3,0) to customer M206
-[Time 00:41] Customer M206 completes purchase (service: 2 min)
-[Time 00:28] Customer L604 arrives at seller L6's queue
-[Time 00:39] Seller L6 assigns seat (6,3) to customer L604
-[Time 00:46] Customer L604 completes purchase (service: 7 min)
-[Time 00:40] Customer L206 arrives at seller L2's queue
-[Time 00:40] Seller L2 assigns seat (6,4) to customer L206
-[Time 00:45] Customer L206 completes purchase (service: 5 min)
-[Time 00:41] Customer M302 arrives at seller M3's queue
-[Time 00:41] Seller M3 assigns seat (3,1) to customer M302
-[Time 00:43] Customer M302 completes purchase (service: 2 min)
-[Time 00:42] Customer M107 arrives at seller M1's queue
-[Time 00:42] Seller M1 assigns seat (3,2) to customer M107
-[Time 00:45] Customer M107 completes purchase (service: 3 min)
-[Time 00:27] Customer L309 arrives at seller L3's queue
-[Time 00:42] Seller L3 assigns seat (6,5) to customer L309
-[Time 00:48] Customer L309 completes purchase (service: 6 min)
-[Time 00:44] Customer L510 arrives at seller L5's queue
-[Time 00:44] Seller L5 assigns seat (6,6) to customer L510
-[Time 00:51] Customer L510 completes purchase (service: 7 min)
-[Time 00:39] Customer L101 arrives at seller L1's queue
-[Time 00:44] Seller L1 assigns seat (6,7) to customer L101
-[Time 00:48] Customer L101 completes purchase (service: 4 min)
-[Time 00:42] Customer L202 arrives at seller L2's queue
-[Time 00:45] Seller L2 assigns seat (6,8) to customer L202
-[Time 00:52] Customer L202 completes purchase (service: 7 min)
-[Time 00:38] Customer L402 arrives at seller L4's queue
-[Time 00:45] Seller L4 assigns seat (6,9) to customer L402
-[Time 00:51] Customer L402 completes purchase (service: 6 min)
-[Time 00:40] Customer L601 arrives at seller L6's queue
-[Time 00:46] Seller L6 assigns seat (3,3) to customer L601
-[Time 00:53] Customer L601 completes purchase (service: 7 min)
-[Time 00:47] Customer M304 arrives at seller M3's queue
-[Time 00:47] Seller M3 assigns seat (3,4) to customer M304
-[Time 00:49] Customer M304 completes purchase (service: 2 min)
-[Time 00:41] Customer L102 arrives at seller L1's queue
-[Time 00:48] Seller L1 assigns seat (3,5) to customer L102
-[Time 00:53] Customer L102 completes purchase (service: 5 min)
-[Time 00:33] Customer L307 arrives at seller L3's queue
-[Time 00:48] Seller L3 assigns seat (3,6) to customer L307
-[Time 00:52] Customer L307 completes purchase (service: 4 min)
-[Time 00:49] Customer M209 arrives at seller M2's queue
-[Time 00:49] Seller M2 assigns seat (3,7) to customer M209
-[Time 00:51] Customer M209 completes purchase (service: 2 min)
-[Time 00:49] Customer M101 arrives at seller M1's queue
-[Time 00:49] Seller M1 assigns seat (3,8) to customer M101
-[Time 00:51] Customer M101 completes purchase (service: 2 min)
-[Time 00:41] Customer L405 arrives at seller L4's queue
-[Time 00:51] Seller L4 assigns seat (3,9) to customer L405
-[Time 00:56] Customer L405 completes purchase (service: 5 min)
-[Time 00:51] Customer M205 arrives at seller M2's queue
-[Time 00:51] Seller M2 assigns seat (2,0) to customer M205
-[Time 00:54] Customer M205 completes purchase (service: 3 min)
-[Time 00:51] Customer L503 arrives at seller L5's queue
-[Time 00:51] Seller L5 assigns seat (2,1) to customer L503
-[Time 00:58] Customer L503 completes purchase (service: 7 min)
-[Time 00:42] Customer L210 arrives at seller L2's queue
-[Time 00:52] Seller L2 assigns seat (2,2) to customer L210
-[Time 00:58] Customer L210 completes purchase (service: 6 min)
-[Time 00:34] Customer L303 arrives at seller L3's queue
-[Time 00:52] Seller L3 assigns seat (2,3) to customer L303
-[Time 00:59] Customer L303 completes purchase (service: 7 min)
-[Time 00:50] Customer L103 arrives at seller L1's queue
-[Time 00:53] Seller L1 assigns seat (2,4) to customer L103
-[Time 01:00] Customer L103 completes purchase (service: 7 min)
-[Time 00:42] Customer L606 arrives at seller L6's queue
-[Time 00:53] Seller L6 assigns seat (2,5) to customer L606
-[Time 00:59] Customer L606 completes purchase (service: 6 min)
-[Time 00:53] Customer M204 arrives at seller M2's queue
-[Time 00:54] Seller M2 assigns seat (2,6) to customer M204
-[Time 00:57] Customer M204 completes purchase (service: 3 min)
-[Time 00:56] Customer H102 arrives at seller H1's queue
-[Time 00:56] Seller H1 assigns seat (0,9) to customer H102
-[Time 00:57] Customer H102 completes purchase (service: 1 min)
-[Time 00:46] Customer L407 arrives at seller L4's queue
-[Time 00:56] Seller L4 assigns seat (2,7) to customer L407
-[Time 01:02] Customer L407 completes purchase (service: 6 min)
-[Time 00:55] Customer M201 arrives at seller M2's queue
-[Time 00:57] Seller M2 assigns seat (2,8) to customer M201
-[Time 01:01] Customer M201 completes purchase (service: 4 min)
-[Time 00:54] Customer L509 arrives at seller L5's queue
-[Time 00:58] Seller L5 assigns seat (2,9) to customer L509
-[Time 01:04] Customer L509 completes purchase (service: 6 min)
-[Time 00:58] Customer L205 arrives at seller L2's queue
-[Time 00:58] Seller L2 assigns seat (1,0) to customer L205
-[Time 01:05] Customer L205 completes purchase (service: 7 min)
-[Time 00:40] Customer L301 arrives at seller L3's queue
-[Time 00:59] Seller L3 assigns seat (1,1) to customer L301
-[Time 01:03] Customer L301 completes purchase (service: 4 min)
-[Time 00:53] Customer L607 arrives at seller L6's queue
-[Time 00:59] Seller L6 assigns seat (1,2) to customer L607
-[Time 01:06] Customer L607 completes purchase (service: 7 min)
-[Time 00:50] Customer L105 arrives at seller L1's queue
-[Time 01:00] Seller L1 assigns seat (1,3) to customer L105
-[Time 01:05] Customer L105 completes purchase (service: 5 min)
-[Time 00:48] Customer L409 arrives at seller L4's queue
-[Time 01:01] Seller L4 assigns seat (1,4) to customer L409
-[Time 01:09] Customer L409 completes purchase (service: 7 min)
-[Time 00:57] Customer M207 arrives at seller M2's queue
-[Time 01:01] Seller M2 assigns seat (1,5) to customer M207
-[Time 01:05] Customer M207 completes purchase (service: 4 min)
-[Time 00:59] Customer L203 arrives at seller L2's queue
-[Time 01:01] Seller L2 assigns seat (1,6) to customer L203
-[Time 01:09] Customer L203 completes purchase (service: 4 min)
-[Time 00:59] Customer L605 arrives at seller L6's queue
-[Time 01:01] Seller L6 assigns seat (1,7) to customer L605
-[Time 01:12] Customer L605 completes purchase (service: 6 min)
-[Time 00:52] Customer L410 arrives at seller L4's queue
-[Time 01:01] Seller L4 assigns seat (1,8) to customer L410
-[Time 01:13] Customer L410 completes purchase (service: 4 min)
-[Time 00:58] Customer L308 arrives at seller L3's queue
-[Time 01:01] Seller L3 assigns seat (1,9) to customer L308
-[Time 01:09] Customer L308 completes purchase (service: 6 min)
+[Time 00:12] Seller M2 assigns seat (4,4) to customer M208
+[Time 00:15] Customer M208 completes purchase (service: 3 min)
+[Time 00:12] Customer H106 arrives at seller H1's queue
+[Time 00:12] Seller H1 assigns seat (0,1) to customer H106
+[Time 00:13] Customer H106 completes purchase (service: 1 min)
+[Time 00:14] Customer L309 arrives at seller L3's queue
+[Time 00:14] Seller L3 assigns seat (8,0) to customer L309
+[Time 00:19] Customer L309 completes purchase (service: 5 min)
+[Time 00:13] Customer L508 arrives at seller L5's queue
+[Time 00:14] Seller L5 assigns seat (8,1) to customer L508
+[Time 00:19] Customer L508 completes purchase (service: 5 min)
+[Time 00:10] Customer L205 arrives at seller L2's queue
+[Time 00:14] Seller L2 assigns seat (8,2) to customer L205
+[Time 00:21] Customer L205 completes purchase (service: 7 min)
+[Time 00:07] Customer L609 arrives at seller L6's queue
+[Time 00:14] Seller L6 assigns seat (8,3) to customer L609
+[Time 00:18] Customer L609 completes purchase (service: 4 min)
+[Time 00:14] Customer M302 arrives at seller M3's queue
+[Time 00:14] Seller M3 assigns seat (4,5) to customer M302
+[Time 00:16] Customer M302 completes purchase (service: 2 min)
+[Time 00:15] Customer L406 arrives at seller L4's queue
+[Time 00:15] Seller L4 assigns seat (8,4) to customer L406
+[Time 00:22] Customer L406 completes purchase (service: 7 min)
+[Time 00:16] Customer L110 arrives at seller L1's queue
+[Time 00:16] Seller L1 assigns seat (8,5) to customer L110
+[Time 00:20] Customer L110 completes purchase (service: 4 min)
+[Time 00:12] Customer L602 arrives at seller L6's queue
+[Time 00:18] Seller L6 assigns seat (8,6) to customer L602
+[Time 00:22] Customer L602 completes purchase (service: 4 min)
+[Time 00:20] Customer H110 arrives at seller H1's queue
+[Time 00:20] Seller H1 assigns seat (0,2) to customer H110
+[Time 00:22] Customer H110 completes purchase (service: 2 min)
+[Time 00:20] Customer M110 arrives at seller M1's queue
+[Time 00:20] Seller M1 assigns seat (4,6) to customer M110
+[Time 00:24] Customer M110 completes purchase (service: 4 min)
+[Time 00:18] Customer L104 arrives at seller L1's queue
+[Time 00:20] Seller L1 assigns seat (8,7) to customer L104
+[Time 00:24] Customer L104 completes purchase (service: 4 min)
+[Time 00:19] Customer L404 arrives at seller L4's queue
+[Time 00:22] Seller L4 assigns seat (8,8) to customer L404
+[Time 00:28] Customer L404 completes purchase (service: 6 min)
+[Time 00:14] Customer L607 arrives at seller L6's queue
+[Time 00:22] Seller L6 assigns seat (8,9) to customer L607
+[Time 00:27] Customer L607 completes purchase (service: 5 min)
+[Time 00:24] Customer M104 arrives at seller M1's queue
+[Time 00:24] Seller M1 assigns seat (4,7) to customer M104
+[Time 00:27] Customer M104 completes purchase (service: 3 min)
+[Time 00:24] Customer L308 arrives at seller L3's queue
+[Time 00:24] Seller L3 assigns seat (7,0) to customer L308
+[Time 00:30] Customer L308 completes purchase (service: 6 min)
+[Time 00:24] Customer L107 arrives at seller L1's queue
+[Time 00:24] Seller L1 assigns seat (7,1) to customer L107
+[Time 00:30] Customer L107 completes purchase (service: 6 min)
+[Time 00:25] Customer L503 arrives at seller L5's queue
+[Time 00:25] Seller L5 assigns seat (7,2) to customer L503
+[Time 00:32] Customer L503 completes purchase (service: 7 min)
+[Time 00:23] Customer L603 arrives at seller L6's queue
+[Time 00:27] Seller L6 assigns seat (7,3) to customer L603
+[Time 00:34] Customer L603 completes purchase (service: 7 min)
+[Time 00:27] Customer M206 arrives at seller M2's queue
+[Time 00:27] Seller M2 assigns seat (4,8) to customer M206
+[Time 00:29] Customer M206 completes purchase (service: 2 min)
+[Time 00:26] Customer M101 arrives at seller M1's queue
+[Time 00:27] Seller M1 assigns seat (4,9) to customer M101
+[Time 00:29] Customer M101 completes purchase (service: 2 min)
+[Time 00:23] Customer L410 arrives at seller L4's queue
+[Time 00:28] Seller L4 assigns seat (7,4) to customer L410
+[Time 00:34] Customer L410 completes purchase (service: 6 min)
+[Time 00:26] Customer L302 arrives at seller L3's queue
+[Time 00:30] Seller L3 assigns seat (7,5) to customer L302
+[Time 00:35] Customer L302 completes purchase (service: 5 min)
+[Time 00:25] Customer L102 arrives at seller L1's queue
+[Time 00:30] Seller L1 assigns seat (7,6) to customer L102
+[Time 00:37] Customer L102 completes purchase (service: 7 min)
+[Time 00:31] Customer M108 arrives at seller M1's queue
+[Time 00:31] Seller M1 assigns seat (5,0) to customer M108
+[Time 00:33] Customer M108 completes purchase (service: 2 min)
+[Time 00:31] Customer L504 arrives at seller L5's queue
+[Time 00:32] Seller L5 assigns seat (7,7) to customer L504
+[Time 00:38] Customer L504 completes purchase (service: 6 min)
+[Time 00:33] Customer L210 arrives at seller L2's queue
+[Time 00:33] Seller L2 assigns seat (7,8) to customer L210
+[Time 00:37] Customer L210 completes purchase (service: 4 min)
+[Time 00:23] Customer L608 arrives at seller L6's queue
+[Time 00:34] Seller L6 assigns seat (7,9) to customer L608
+[Time 00:38] Customer L608 completes purchase (service: 4 min)
+[Time 00:30] Customer L403 arrives at seller L4's queue
+[Time 00:34] Seller L4 assigns seat (6,0) to customer L403
+[Time 00:39] Customer L403 completes purchase (service: 5 min)
+[Time 00:35] Customer H109 arrives at seller H1's queue
+[Time 00:35] Seller H1 assigns seat (0,3) to customer H109
+[Time 00:36] Customer H109 completes purchase (service: 1 min)
+[Time 00:32] Customer L310 arrives at seller L3's queue
+[Time 00:35] Seller L3 assigns seat (6,1) to customer L310
+[Time 00:39] Customer L310 completes purchase (service: 4 min)
+[Time 00:36] Customer M103 arrives at seller M1's queue
+[Time 00:36] Seller M1 assigns seat (5,1) to customer M103
+[Time 00:39] Customer M103 completes purchase (service: 3 min)
+[Time 00:36] Customer L203 arrives at seller L2's queue
+[Time 00:37] Seller L2 assigns seat (6,2) to customer L203
+[Time 00:44] Customer L203 completes purchase (service: 7 min)
+[Time 00:30] Customer L101 arrives at seller L1's queue
+[Time 00:37] Seller L1 assigns seat (6,3) to customer L101
+[Time 00:41] Customer L101 completes purchase (service: 4 min)
+[Time 00:35] Customer L501 arrives at seller L5's queue
+[Time 00:38] Seller L5 assigns seat (6,4) to customer L501
+[Time 00:45] Customer L501 completes purchase (service: 7 min)
+[Time 00:31] Customer L601 arrives at seller L6's queue
+[Time 00:38] Seller L6 assigns seat (6,5) to customer L601
+[Time 00:45] Customer L601 completes purchase (service: 7 min)
+[Time 00:36] Customer L401 arrives at seller L4's queue
+[Time 00:39] Seller L4 assigns seat (6,6) to customer L401
+[Time 00:44] Customer L401 completes purchase (service: 5 min)
+[Time 00:39] Customer M201 arrives at seller M2's queue
+[Time 00:39] Seller M2 assigns seat (5,2) to customer M201
+[Time 00:42] Customer M201 completes purchase (service: 3 min)
+[Time 00:40] Customer H102 arrives at seller H1's queue
+[Time 00:40] Seller H1 assigns seat (0,4) to customer H102
+[Time 00:41] Customer H102 completes purchase (service: 1 min)
+[Time 00:40] Customer M204 arrives at seller M2's queue
+[Time 00:42] Seller M2 assigns seat (5,3) to customer M204
+[Time 00:44] Customer M204 completes purchase (service: 2 min)
+[Time 00:43] Customer M107 arrives at seller M1's queue
+[Time 00:43] Seller M1 assigns seat (5,4) to customer M107
+[Time 00:45] Customer M107 completes purchase (service: 2 min)
+[Time 00:40] Customer L407 arrives at seller L4's queue
+[Time 00:44] Seller L4 assigns seat (6,7) to customer L407
+[Time 00:51] Customer L407 completes purchase (service: 7 min)
+[Time 00:43] Customer M209 arrives at seller M2's queue
+[Time 00:44] Seller M2 assigns seat (5,5) to customer M209
+[Time 00:47] Customer M209 completes purchase (service: 3 min)
+[Time 00:45] Customer L305 arrives at seller L3's queue
+[Time 00:45] Seller L3 assigns seat (6,8) to customer L305
+[Time 00:50] Customer L305 completes purchase (service: 5 min)
+[Time 00:39] Customer L506 arrives at seller L5's queue
+[Time 00:45] Seller L5 assigns seat (6,9) to customer L506
+[Time 00:52] Customer L506 completes purchase (service: 7 min)
+[Time 00:46] Customer H103 arrives at seller H1's queue
+[Time 00:46] Seller H1 assigns seat (0,5) to customer H103
+[Time 00:47] Customer H103 completes purchase (service: 1 min)
+[Time 00:46] Customer M307 arrives at seller M3's queue
+[Time 00:46] Seller M3 assigns seat (5,6) to customer M307
+[Time 00:48] Customer M307 completes purchase (service: 2 min)
+[Time 00:46] Customer H104 arrives at seller H1's queue
+[Time 00:47] Seller H1 assigns seat (0,6) to customer H104
+[Time 00:49] Customer H104 completes purchase (service: 2 min)
+[Time 00:47] Customer L206 arrives at seller L2's queue
+[Time 00:47] Seller L2 assigns seat (5,7) to customer L206
+[Time 00:54] Customer L206 completes purchase (service: 7 min)
+[Time 00:45] Customer M202 arrives at seller M2's queue
+[Time 00:47] Seller M2 assigns seat (5,8) to customer M202
+[Time 00:50] Customer M202 completes purchase (service: 3 min)
+[Time 00:48] Customer M105 arrives at seller M1's queue
+[Time 00:48] Seller M1 assigns seat (5,9) to customer M105
+[Time 00:52] Customer M105 completes purchase (service: 4 min)
+[Time 00:47] Customer H105 arrives at seller H1's queue
+[Time 00:49] Seller H1 assigns seat (0,7) to customer H105
+[Time 00:50] Customer H105 completes purchase (service: 1 min)
+[Time 00:49] Customer L606 arrives at seller L6's queue
+[Time 00:49] Seller L6 assigns seat (3,0) to customer L606
+[Time 00:56] Customer L606 completes purchase (service: 7 min)
+[Time 00:50] Customer M308 arrives at seller M3's queue
+[Time 00:50] Seller M3 assigns seat (3,1) to customer M308
+[Time 00:53] Customer M308 completes purchase (service: 3 min)
+[Time 00:46] Customer L307 arrives at seller L3's queue
+[Time 00:50] Seller L3 assigns seat (3,2) to customer L307
+[Time 00:54] Customer L307 completes purchase (service: 4 min)
+[Time 00:46] Customer M203 arrives at seller M2's queue
+[Time 00:50] Seller M2 assigns seat (3,3) to customer M203
+[Time 00:53] Customer M203 completes purchase (service: 3 min)
+[Time 00:41] Customer L402 arrives at seller L4's queue
+[Time 00:51] Seller L4 assigns seat (3,4) to customer L402
+[Time 00:57] Customer L402 completes purchase (service: 6 min)
+[Time 00:52] Customer L105 arrives at seller L1's queue
+[Time 00:52] Seller L1 assigns seat (3,5) to customer L105
+[Time 00:58] Customer L105 completes purchase (service: 6 min)
+[Time 00:41] Customer L502 arrives at seller L5's queue
+[Time 00:52] Seller L5 assigns seat (3,6) to customer L502
+[Time 00:57] Customer L502 completes purchase (service: 5 min)
+[Time 00:52] Customer M207 arrives at seller M2's queue
+[Time 00:53] Seller M2 assigns seat (3,7) to customer M207
+[Time 00:57] Customer M207 completes purchase (service: 4 min)
+[Time 00:51] Customer M303 arrives at seller M3's queue
+[Time 00:53] Seller M3 assigns seat (3,8) to customer M303
+[Time 00:55] Customer M303 completes purchase (service: 2 min)
+[Time 00:48] Customer L304 arrives at seller L3's queue
+[Time 00:54] Seller L3 assigns seat (3,9) to customer L304
+[Time 00:58] Customer L304 completes purchase (service: 4 min)
+[Time 00:48] Customer L201 arrives at seller L2's queue
+[Time 00:54] Seller L2 assigns seat (2,0) to customer L201
+[Time 00:59] Customer L201 completes purchase (service: 5 min)
+[Time 00:55] Customer H108 arrives at seller H1's queue
+[Time 00:55] Seller H1 assigns seat (0,8) to customer H108
+[Time 00:57] Customer H108 completes purchase (service: 2 min)
+[Time 00:54] Customer M301 arrives at seller M3's queue
+[Time 00:55] Seller M3 assigns seat (2,1) to customer M301
+[Time 00:57] Customer M301 completes purchase (service: 2 min)
+[Time 00:56] Customer M109 arrives at seller M1's queue
+[Time 00:56] Seller M1 assigns seat (2,2) to customer M109
+[Time 00:59] Customer M109 completes purchase (service: 3 min)
+[Time 00:54] Customer M306 arrives at seller M3's queue
+[Time 00:57] Seller M3 assigns seat (2,3) to customer M306
+[Time 01:00] Customer M306 completes purchase (service: 3 min)
+[Time 00:53] Customer L505 arrives at seller L5's queue
+[Time 00:57] Seller L5 assigns seat (2,4) to customer L505
+[Time 01:01] Customer L505 completes purchase (service: 4 min)
+[Time 00:57] Customer H107 arrives at seller H1's queue
+[Time 00:57] Seller H1 assigns seat (0,9) to customer H107
+[Time 00:58] Customer H107 completes purchase (service: 1 min)
+[Time 00:41] Customer L408 arrives at seller L4's queue
+[Time 00:57] Seller L4 assigns seat (2,5) to customer L408
+[Time 01:01] Customer L408 completes purchase (service: 4 min)
+[Time 00:58] Customer L610 arrives at seller L6's queue
+[Time 00:58] Seller L6 assigns seat (2,6) to customer L610
+[Time 01:02] Customer L610 completes purchase (service: 4 min)
+[Time 00:56] Customer L103 arrives at seller L1's queue
+[Time 00:58] Seller L1 assigns seat (2,7) to customer L103
+[Time 01:04] Customer L103 completes purchase (service: 6 min)
+[Time 00:58] Customer M205 arrives at seller M2's queue
+[Time 00:58] Seller M2 assigns seat (2,8) to customer M205
+[Time 01:01] Customer M205 completes purchase (service: 3 min)
+[Time 00:51] Customer L306 arrives at seller L3's queue
+[Time 00:58] Seller L3 assigns seat (2,9) to customer L306
+[Time 01:03] Customer L306 completes purchase (service: 5 min)
+[Time 00:52] Customer L204 arrives at seller L2's queue
+[Time 00:59] Seller L2 assigns seat (1,0) to customer L204
+[Time 01:04] Customer L204 completes purchase (service: 5 min)
+[Time 00:58] Customer M106 arrives at seller M1's queue
+[Time 00:59] Seller M1 assigns seat (1,1) to customer M106
+[Time 01:02] Customer M106 completes purchase (service: 3 min)
+[Time 00:58] Customer M304 arrives at seller M3's queue
+[Time 01:00] Seller M3 assigns seat (1,2) to customer M304
+[Time 01:03] Customer M304 completes purchase (service: 3 min)
+[Time 00:57] Customer L507 arrives at seller L5's queue
+[Time 01:01] Seller L5 assigns seat (1,3) to customer L507
+[Time 01:08] Customer L507 completes purchase (service: 7 min)
+[Time 00:55] Customer L207 arrives at seller L2's queue
+[Time 01:01] Seller L2 assigns seat (1,4) to customer L207
+[Time 01:11] Customer L207 completes purchase (service: 7 min)
+[Time 00:57] Customer L208 arrives at seller L2's queue
+[Time 01:01] Seller L2 assigns seat (1,5) to customer L208
+[Time 01:16] Customer L208 completes purchase (service: 5 min)
+[Time 00:58] Customer L303 arrives at seller L3's queue
+[Time 01:01] Seller L3 assigns seat (1,6) to customer L303
+[Time 01:08] Customer L303 completes purchase (service: 5 min)
+[Time 00:58] Customer M305 arrives at seller M3's queue
+[Time 01:01] Seller M3 assigns seat (1,7) to customer M305
+[Time 01:07] Customer M305 completes purchase (service: 4 min)
+[Time 00:57] Customer L108 arrives at seller L1's queue
+[Time 01:01] Seller L1 assigns seat (1,8) to customer L108
+[Time 01:11] Customer L108 completes purchase (service: 7 min)
+[Time 00:59] Customer L405 arrives at seller L4's queue
+[Time 01:01] Seller L4 assigns seat (1,9) to customer L405
+[Time 01:06] Customer L405 completes purchase (service: 5 min)
 Waiting for all seller threads to exit...
 
 ========== SEATING CHART ==========
     Col0 Col1 Col2 Col3 Col4 Col5 Col6 Col7 Col8 Col9 
     ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-R0: H107 H108 H104 H105 H101 H106 H110 H109 H103 H102 
-R1: L205 L301 L607 L105 L409 M207 L203 L605 L410 L308 
-R2: M205 L503 L210 L303 L103 L606 M204 L407 M201 L509 
-R3: M206 M302 M107 L601 M304 L102 L307 M209 M101 L405 
-R4: M305 M106 M203 M102 M301 M108 M303 M202 M109 M208 
-R5: M308 M103 M105 M104 M210 M309 M310 M307 M110 M306 
-R6: L504 L401 L104 L604 L206 L309 L510 L101 L202 L402 
-R7: L106 L507 L304 L204 L107 L404 L506 L603 L209 L306 
-R8: L403 L208 L108 L609 L502 L302 L110 L408 L201 L608 
-R9: L505 L602 L207 L305 L109 L501 L406 L310 L610 L508 
+R0: H101 H106 H110 H109 H102 H103 H104 H105 H108 H107 
+R1: L204 M106 M304 L507 L207 L208 L303 M305 L108 L405 
+R2: L201 M301 M109 M306 L505 L408 L610 L103 M205 L306 
+R3: L606 M308 L307 M203 L402 L105 L502 M207 M303 L304 
+R4: M102 M210 M309 M310 M208 M302 M110 M104 M206 M101 
+R5: M108 M103 M201 M204 M107 M209 M307 L206 M202 M105 
+R6: L403 L310 L203 L101 L501 L601 L401 L407 L305 L506 
+R7: L308 L107 L503 L603 L410 L302 L102 L504 L210 L608 
+R8: L309 L508 L205 L609 L406 L110 L602 L104 L404 L607 
+R9: L106 L510 L409 L604 L301 L202 L509 L605 L209 L109 
 ===================================
 Available seats: 0 / 100
 
 High-Price Seller (H):
   Customers served: 10
   Customers turned away: 0
-  Average response time: 0.70 minutes
-  Average turnaround time: 2.10 minutes
+  Average response time: 0.30 minutes
+  Average turnaround time: 1.60 minutes
   Throughput: 10.00 customers/hour
 
 Medium-Price Sellers (M1, M2, M3):
   Customers served: 30
   Customers turned away: 0
-  Average response time: 1.30 minutes
-  Average turnaround time: 4.10 minutes
+  Average response time: 0.83 minutes
+  Average turnaround time: 3.57 minutes
   Throughput per seller: 10.00 customers/hour
 
 Low-Price Sellers (L1-L6):
   Customers served: 60
   Customers turned away: 0
-  Average response time: 6.75 minutes
-  Average turnaround time: 12.50 minutes
+  Average response time: 3.67 minutes
+  Average turnaround time: 9.18 minutes
   Throughput per seller: 10.00 customers/hour
 
 Total served: 100
