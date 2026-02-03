@@ -169,7 +169,7 @@ void calculateStatistics()
     {
         printf("  Average response time: %.2f minutes\n", h_total_rt / H_served);
         printf("  Average turnaround time: %.2f minutes\n", h_total_tt / H_served);
-        printf("  Throughput: %.2f customers/minute\n", (double)H_served / 60.0);
+        printf("  Throughput: %.2f customers/hour\n", (double)H_served); /// 60.0
     }
     printf("\n");
 
@@ -181,7 +181,7 @@ void calculateStatistics()
     {
         printf("  Average response time: %.2f minutes\n", m_total_rt / M_served);
         printf("  Average turnaround time: %.2f minutes\n", m_total_tt / M_served);
-        printf("  Throughput per seller: %.2f customers/minute\n", (double)M_served / 60.0 / 3.0);
+        printf("  Throughput per seller: %.2f customers/hour\n", (double)M_served / 3.0); /// 60.0
     }
     printf("\n");
 
@@ -193,7 +193,8 @@ void calculateStatistics()
     {
         printf("  Average response time: %.2f minutes\n", l_total_rt / L_served);
         printf("  Average turnaround time: %.2f minutes\n", l_total_tt / L_served);
-        printf("  Throughput per seller: %.2f customers/minute\n", (double)L_served / 60.0 / 6.0);
+        // per hour
+        printf("  Throughput per seller: %.2f customers/hour\n", (double)L_served / 6.0); /// 60.0
     }
     printf("\n");
 
@@ -202,6 +203,8 @@ void calculateStatistics()
     printf("==========================================\n\n");
 }
 
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+/*
 void *sell(void *s_t)
 {
     Seller *info = (Seller *)s_t;
@@ -209,6 +212,9 @@ void *sell(void *s_t)
     char sellerType = info->sellerType;
     int myNumber = info->sellerNumber;
     char msg[200];
+
+    // int sellerFree = 0;
+    int sellerFree = 0; // when the seller will be free next
 
     while (nextCustomer[myId] < queueSizes[myId])
     {
@@ -230,27 +236,121 @@ void *sell(void *s_t)
 
         Customer *customer = &queues[myId][nextCustomer[myId]];
 
-        if (customer->arrivalTime > currentTime)
+        while (customer->arrivalTime > currentTime || currentTime < sellerFree)
         {
             pthread_cond_wait(&cond, &mutex);
-            pthread_mutex_unlock(&mutex);
-            continue;
+            // pthread_mutex_unlock(&mutex);
+            // continue;
         }
 
-        customer->startTime = currentTime;
+        // customer->startTime = currentTime;
+        customer->startTime = MAX(sellerFree, currentTime);
 
         sprintf(msg, "Customer %s arrives at seller %c%d's queue",
                 customer->customerID, sellerType, myNumber);
         printEvent(customer->arrivalTime, msg);
 
         int seatRow, seatCol;
+        pthread_mutex_lock(&mutex);
         if (availableSeats > 0 &&
             assignSeat(sellerType, customer->customerID, &seatRow, &seatCol))
         {
             customer->seatRow = seatRow;
             customer->seatCol = seatCol;
             customer->gotSeat = 1;
-            customer->endTime = currentTime + customer->serviceTime;
+            customer->endTime = customer->startTime + customer->serviceTime;
+
+            sellerFree = customer->endTime;
+            sprintf(msg, "Seller %c%d assigns seat (%d,%d) to customer %s",
+                    sellerType, myNumber, seatRow, seatCol, customer->customerID);
+            printEvent(currentTime, msg);
+
+            sprintf(msg, "Customer %s completes purchase (service: %d min)",
+                    customer->customerID, customer->serviceTime);
+            printEvent(customer->endTime, msg);
+
+
+        }
+        else
+        {
+            // Sold out seat
+            customer->gotSeat = 0;
+            customer->endTime = currentTime;
+
+            sprintf(msg, "Customer %s turned away by %c%d - SOLD OUT",
+                    customer->customerID, sellerType, myNumber);
+            printEvent(currentTime, msg);
+        }
+
+        nextCustomer[myId]++;
+        pthread_mutex_unlock(&mutex);
+    }
+
+    return NULL;
+}
+*/
+
+void *sell(void *s_t)
+{
+    Seller *info = (Seller *)s_t;
+    int myId = info->sellerID;
+    char sellerType = info->sellerType;
+    int myNumber = info->sellerNumber;
+    char msg[200];
+
+    int sellerFree = 0;
+
+    while (nextCustomer[myId] < queueSizes[myId])
+    {
+        pthread_mutex_lock(&mutex);
+
+        Customer *customer = &queues[myId][nextCustomer[myId]];
+
+        // Wait until customer arrives and seller is free, but only up to 60 min
+        while ((customer->arrivalTime > currentTime) || (currentTime < sellerFree))
+        {
+            if (currentTime > 60)
+            {
+                break; // stop waiting if simulation ended
+            }
+            pthread_cond_wait(&cond, &mutex);
+        }
+
+        if (currentTime > 60 && customer->arrivalTime > 60)
+        {
+            // Customer arrived too late -> turn away
+            customer->gotSeat = 0;
+            customer->startTime = -1;
+            customer->endTime = 60;
+            nextCustomer[myId]++;
+            pthread_mutex_unlock(&mutex);
+            continue;
+        }
+
+        // Set startTime correctly
+        customer->startTime = MAX(currentTime, sellerFree);
+
+        sprintf(msg, "Customer %s arrives at seller %c%d's queue",
+                customer->customerID, sellerType, myNumber);
+        printEvent(customer->arrivalTime, msg);
+
+        int seatRow = -1, seatCol = -1;
+        int seatAssigned = 0;
+
+        // Assign seat safely inside mutex
+        if (availableSeats > 0)
+        {
+            seatAssigned = assignSeat(sellerType, customer->customerID, &seatRow, &seatCol);
+        }
+
+        if (seatAssigned)
+        {
+            customer->seatRow = seatRow;
+            customer->seatCol = seatCol;
+            customer->gotSeat = 1;
+            customer->endTime = customer->startTime + customer->serviceTime;
+
+            sellerFree = customer->endTime;
 
             sprintf(msg, "Seller %c%d assigns seat (%d,%d) to customer %s",
                     sellerType, myNumber, seatRow, seatCol, customer->customerID);
@@ -262,7 +362,7 @@ void *sell(void *s_t)
         }
         else
         {
-            // Sold out seat
+            // Sold out
             customer->gotSeat = 0;
             customer->endTime = currentTime;
 
