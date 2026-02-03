@@ -159,12 +159,6 @@ void *sell(void *s_t)
 }
 
 // Wake up all seller threads function provided in project description
-void wakeup_all_seller_threads()
-{
-    pthread_mutex_lock(&mutex);
-    pthread_cond_broadcast(&cond);
-    pthread_mutex_unlock(&mutex);
-}
 
 int main(int argc, char *argv[])
 {
