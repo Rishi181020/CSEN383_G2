@@ -1,0 +1,4 @@
+
+#define TOTAL_PAGES 100
+#define NUM_PROCESSES 150
+#define NUM_RUNS 5
